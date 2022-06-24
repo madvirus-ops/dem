@@ -1,0 +1,41 @@
+{% extends 'hotel_app/base.html' %}
+
+{%block title%}Register customer{%endblock%}
+
+{%block content%}
+    <form action="" method="post">
+        {%csrf_token%}
+            <label for=" occupant name">occupant Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+            <br>
+            <label for=" occupant name">occupant occupatgion</label>
+            <input type="text" class="form-control" id="occupation" name="occupation" placeholder="Enter name">
+            <br>
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+            <br>
+             <label for="room number">room number</label>
+             <input type="text" class="form-control" id="room_number" name="room_number" placeholder="Enter room number">
+             <br>
+            <label for="amount paid">amount paid</label>
+            <input type="text" class="form-control" id="amount_paid" name="amount_paid" placeholder="Enter amount paid">
+            <br>
+            <label for="Number of night">Number of Nights</label>
+            <input type="text" class="form-control" id="number_of_nights" name="number_of_nights" placeholder="Enter number of nights">
+            <br>
+            <label for="start date">start date</label>
+            <input type="date" class="form-control" id="start_date" name="start_date" placeholder="Enter start date">
+            <br>
+            <label for="end date">end date</label>
+            <input type="date" class="form-control" id="end_date" name="end_date" placeholder="Enter end date">
+            <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {%if messages%}
+    {% for message in messages%}
+    <script>
+        window.confirm("{{message}}")
+    </script>
+    {%endfor%}
+    {%endif%}
+{%endblock%}
